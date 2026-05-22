@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script src="auth-guard.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Envíos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 48px 36px;
+      width: 100%; max-width: 460px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      text-align: center;
+    }
+    h1 {
+      font-size: 30px; font-weight: 800;
+      color: #0f172a; text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 32px;
+    }
+    .btns { display: grid; gap: 16px; }
+    .btn {
+      display: block; width: 100%;
+      padding: 22px 18px;
+      border: none; border-radius: 16px;
+      font-family: inherit; font-size: 18px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: #fff; cursor: pointer;
+      transition: transform .08s, opacity .15s;
+      text-decoration: none;
+    }
+    .btn:hover { opacity: .92; }
+    .btn:active { transform: scale(.985); }
+    .btn-tall { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .btn-ps   { background: linear-gradient(135deg, #10b981, #059669); }
+    .btn-calc { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .salir {
+      margin-top: 28px;
+      background: none; border: none;
+      color: #64748b; font-size: 13px; cursor: pointer;
+      text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+    }
+    .salir:hover { color: #0f172a; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Envíos</h1>
+    <div class="btns">
+      <a class="btn btn-tall" href="Talleristas/Envios/EnviosTall.html">Tallerista</a>
+      <a class="btn btn-ps"   href="Prov Serv/Envios/EnviosPS.html">Prov Serv</a>
+      <a class="btn btn-calc" href="calculadora.html">Calculadora</a>
+    </div>
+    <button class="salir" onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+  <script>
+    function cerrarSesion(){
+      sessionStorage.clear();
+      window.location.href = 'login.html?logout=1';
+    }
+  </script>
+</body>
+</html>
